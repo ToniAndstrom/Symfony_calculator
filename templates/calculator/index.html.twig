@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	<h1>Symfony Calculator</h1>
+{% endblock %}
+
+
+{% block body %}
+
+	<body>
+		<div class="calculator">
+
+			<h1>
+				SYMFONY
+				<br>
+				CALCULATOR
+			</h1><br>
+			<form action="{{path("calculator_page")}}" method="post">
+
+				Number 1:<label for="number1"></label>
+				<br>
+				<input type="number" step="0.01" name="number1" required>
+				<br>
+
+				<label for="operation">Operation:</label>
+				<br>
+				<select name="operation" id="operation">
+					<option value="add">ADD</option>
+					<option value="subtract">SUBTRACT</option>
+					<option value="multiply">MULTIPLY</option>
+					<option value="divide">DIVIDE</option>
+				</select>
+				<br>
+
+				Number 2:<label for="number2"></label>
+				<br>
+				<input type="number" step="0.01" name="number2" required>
+				<br>
+
+				<button name="submit">COUNT</button>
+				<br>
+
+
+				<button type="reset">CLEAR</button>
+				{% if {value} %}
+					<div class="result">
+						<h2>The result is:
+							<br>
+							{{value}}</h2>
+					</div>
+				{% endif %}
+			</div>
+		</body>
+	{% endblock %}
+
