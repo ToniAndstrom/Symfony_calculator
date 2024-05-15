@@ -1,1 +1,1 @@
-This is a simple calculator I made for a class task using Symfony.
+This is a simple calculator I made forclass task using Symfony.
