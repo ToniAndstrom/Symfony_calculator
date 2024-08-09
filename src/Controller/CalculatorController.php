@@ -21,9 +21,6 @@ class CalculatorController extends AbstractController
 
 
         $value = "";
-        if ($number1 ==0|| $number2 ==0 && $operation="division"){
-            $value= "Cannot divide by zero";
-        }
         switch ($operation) {
             case "add":
                 $value = $number1 + $number2;
@@ -32,15 +29,18 @@ class CalculatorController extends AbstractController
                 $value = $number1 - $number2;
                 break;
             case "multiply":
-                $value = $number1 * $number2;
+                if ($number1 == 0 || $number2 == 0 && $operation == "multiply") {
+                    $value = "0";
+                } else $value = $number1 * $number2;
                 break;
             case "divide":
-                $value = $number1 / $number2;
+                if ($number1 == 0 || $number2 == 0 && $operation == "division") {
+                    $value = "Cannot divide by zero";
+                } else
+                    $value = $number1 / $number2;
                 break;
-            default:
-                echo "invalid operation";
         }
-      
+
 
 
         return $this->render(
@@ -51,4 +51,3 @@ class CalculatorController extends AbstractController
         );
     }
 }
- 

@@ -8,20 +8,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.calculator{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color: red;
-    height: 100%;
-    width: 30%;
-    font-size:1.5rem;
-   
+    background-color: lightcoral;
 }
 h1{
     margin-top: 2rem;
+}
+.title{
+    text-align: center;
 }
 h2{
     display: flex;
@@ -50,5 +43,19 @@ button{
 }
 .result{
     text-align: center;
-    color:white
+    background-color:white;
+    color:black;
+    margin:5rem;
+    border-radius: 10px;
+}
+.form_container{
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+label{
+    color:white;
 }

@@ -8,16 +8,18 @@
 {% block body %}
 
 	<body>
-		<div class="calculator">
-
+		
+			<div class="title">
 			<h1>
 				SYMFONY
 				<br>
 				CALCULATOR
 			</h1><br>
-			<form action="{{path("calculator_page")}}" method="post">
+			</div>
+			<div class="form_container">
+			<form action="{{path("calculator_page")}}" method="get">
 
-				Number 1:<label for="number1"></label>
+				<label for="number1">Number 1:</label>
 				<br>
 				<input type="number" step="0.01" name="number1" required>
 				<br>
@@ -32,24 +34,24 @@
 				</select>
 				<br>
 
-				Number 2:<label for="number2"></label>
+				<label for="number2">Number 2:</label>
 				<br>
 				<input type="number" step="0.01" name="number2" required>
 				<br>
 
 				<button name="submit">COUNT</button>
 				<br>
+				</form>
+				</div>
 
-
-				<button type="reset">CLEAR</button>
-				{% if {value} %}
+				{% if value %}
 					<div class="result">
-						<h2>The result is:
-							<br>
-							{{value}}</h2>
+						<h2>The result is: <br>
+						{{value}}</h2>
+						<button name= "clear" onclick=>CLEAR</button>
 					</div>
 				{% endif %}
-			</div>
+			
 		</body>
 	{% endblock %}
 
