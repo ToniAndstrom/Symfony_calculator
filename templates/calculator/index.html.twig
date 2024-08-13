@@ -19,9 +19,11 @@
 			<div class="form_container">
 			<form action="{{path("calculator_page")}}" method="get">
 
+		
+
 				<label for="number1">Number 1:</label>
 				<br>
-				<input type="number" step="0.01" name="number1" required>
+				<input type="text"  name="number1" value="{{ number1 }}" required>
 				<br>
 
 				<label for="operation">Operation:</label>
@@ -36,11 +38,12 @@
 
 				<label for="number2">Number 2:</label>
 				<br>
-				<input type="number" step="0.01" name="number2" required>
+				<input type="text"  name="number2" value="{{ number2 }}" required>
+				
 				<br>
-
-				<button name="submit">COUNT</button>
-				<br>
+				<button name="submit">COUNT</button><br>
+				
+				<button type="submit" name="clear" value="1">Clear</button>
 				</form>
 				</div>
 
@@ -48,10 +51,11 @@
 					<div class="result">
 						<h2>The result is: <br>
 						{{value}}</h2>
-						<button name= "clear" onclick=>CLEAR</button>
 					</div>
 				{% endif %}
-			
+
 		</body>
+
+
 	{% endblock %}
 

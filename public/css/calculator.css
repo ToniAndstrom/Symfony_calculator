@@ -42,11 +42,15 @@ button{
     border-radius: 10px;
 }
 .result{
+    
     text-align: center;
+    align-items: center;
     background-color:white;
     color:black;
-    margin:5rem;
-    border-radius: 10px;
+    min-width:15rem;
+    min-height: 4rem;
+    margin:3rem;
+    border-radius: 20px;
 }
 .form_container{
     background-color: rebeccapurple;
@@ -54,8 +58,10 @@ button{
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    min-width:15rem;
     border-radius: 10px;
 }
 label{
     color:white;
 }
+

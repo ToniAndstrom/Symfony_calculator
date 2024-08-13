@@ -18,27 +18,45 @@ class CalculatorController extends AbstractController
         $number1 = $request->query->get("number1", "");
         $number2 = $request->query->get("number2", "");
         $operation = $request->query->get("operation", "");
+        $clear = $request->query->get("clear", "");
 
 
         $value = "";
-        switch ($operation) {
-            case "add":
-                $value = $number1 + $number2;
-                break;
-            case "subtract":
-                $value = $number1 - $number2;
-                break;
-            case "multiply":
-                if ($number1 == 0 || $number2 == 0 && $operation == "multiply") {
-                    $value = "0";
-                } else $value = $number1 * $number2;
-                break;
-            case "divide":
-                if ($number1 == 0 || $number2 == 0 && $operation == "division") {
-                    $value = "Cannot divide by zero";
-                } else
-                    $value = $number1 / $number2;
-                break;
+
+        if ($clear) {
+            $number1 = "";
+            $number2 = "";
+            $operation = "";
+            $value = "0";
+        } else {
+            switch ($operation) {
+                case "add":
+                    if ($number1 == 0 && $number2 == 0) {
+                        $value = "zero";
+                    } else
+                        $value = $number1 + $number2;
+                    break;
+                case "subtract":
+                    if ($number1 == 0 && $number2 == 0) {
+                        $value = "zero";
+                    } else
+                        $value = $number1 - $number2;
+                    break;
+                case "multiply":
+                    if ($number1 == 0 || $number2 == 0) {
+                        $value = "zero";
+                    } else
+                        $value = $number1 * $number2;
+
+                    break;
+                case "divide":
+                    if ($number1 == 0 || $number2 == 0) {
+                        $value = "Cannot divide by zero";
+                    } else
+                        $value = $number1 / $number2;
+
+                    break;
+            }
         }
 
 
